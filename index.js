@@ -331,7 +331,11 @@ const generateTracklist = () => {
           "
         >${track.title}</h3>
         <p>${track.features ? `with ${track.features}` : '' }</p>
-        <img src="./assets/images/tracklist/${track.id}.svg" alt="background for track #${track.id}" />
+        <img
+          src="./assets/images/tracklist/${track.id}.svg"
+          alt="background for track #${track.id}"
+          draggable="false"
+        />
       </div>
     </li>`;
     return li;

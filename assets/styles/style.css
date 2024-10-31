@@ -2,6 +2,7 @@
   scroll-behavior: smooth;
   ---main-bg-color: #040303;
   ---secondary-bg-color: #461111;
+  ---secondary-bg-color-80: hsla(0, 61%, 17%, 80%);
   ---light-maroon: #A13333;
   ---warm-mud: #B3541E;
   ---header-text-color: #E4C59E;
@@ -58,7 +59,8 @@ h3 {
   font-size: 1.5rem;
 }
 
-header {
+#jumbotron-header,
+.album-detail-wrapper {
   padding-bottom: 1rem;
   background-image: url('../images/cc_trees.jpg');
   background-repeat: no-repeat;
@@ -96,7 +98,9 @@ header nav ul {
   font-size: 1.5rem;
 }  
 
-header nav ul > li:hover {
+header nav ul > li:hover,
+.message-pic-wrapper a:hover,
+.album-detail a:hover {
   text-decoration: underline;
   color: var(---header-text-color);
 }
@@ -322,6 +326,51 @@ footer {
 }
 
 .message-pic-wrapper a {
+  text-decoration: underline;
+}
+
+#album-detail-header,
+#album-detail-header figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#album-detail-header figcaption {
+  margin-top: 2rem;
+}
+
+.album-detail h2,
+.album-detail h3 {
+  margin-top: 0;
+}
+
+.album-detail img {
+  max-width: 30rem;
+}
+
+.album-detail-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  padding: 3.75rem 0;
+  border: 2rem solid var(---p-text-color-dark);
+}
+
+.album-detail table {
+  padding: 1.5rem;
+  border-spacing: 0.75rem;
+  background-color: var(---secondary-bg-color-80);
+  
+}
+
+.album-detail th {
+  text-align: left;
+  width: 6rem;
+}
+
+.album-detail a {
   text-decoration: underline;
 }
 
