@@ -1,11 +1,312 @@
+:root {
+  scroll-behavior: smooth;
+  ---main-bg-color: #040303;
+  ---secondary-bg-color: #461111;
+  ---light-maroon: #A13333;
+  ---warm-mud: #B3541E;
+  ---header-text-color: #E4C59E;
+  ---p-text-color: #F9E4D4;
+  ---tl-black: #0C0B07;
+  ---tl-white: #FFFDFE;
+}
+
+* {
+  /* border: 1px solid red; */
+}
+
 body {
   font-family: "Space Grotesk", serif;
   font-optical-sizing: auto;
   font-style: normal;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  background-color: var(---main-bg-color);
+  color: var(---p-text-color);
 }
 
 h1, h2, h3 {
   font-family: "Ultra", serif;
   font-weight: 400;
   font-style: normal;
+  letter-spacing: 0.08em;
+  color: var(---header-text-color);
+  text-shadow: 0 0 1px var(---p-text-color);
+  -webkit-text-stroke: 0.5px var(---secondary-bg-color);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p {
+  font-size: 1.125rem;
+  font-weight: lighter;
+  line-height: 1.625;
+  text-align: justify;
+}
+
+h2 {
+  font-size: 2.25rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+header {
+  padding-bottom: 1rem;
+  background-image: url('../images/cc_trees.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 45%;
+}
+
+blockquote p::before {
+  content: '\201C';
+}
+
+blockquote p::after {
+  content: '\201D';
+}
+
+.fixed-nav {
+  position: fixed;
+  top: 0;
+  z-index: 20;
+  background-color: brown;
+  align-self: center;
+  animation: opacityTransition 0.2s ease-in;
+}
+
+header nav {
+  width: 100%;
+}
+
+header nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style: none;
+  gap: 2rem;
+  font-size: 1.5rem;
+}  
+
+header nav ul > li:hover {
+  text-decoration: underline;
+  color: var(---header-text-color);
+}
+
+.font-anton {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font-pm {
+  font-family: "Permanent Marker", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.center-element {
+  width: 90%;
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
+.jumbo-nav-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.5rem;
+  height: 100vh;
+}
+
+.jumbotron {
+  padding: 2rem 3.5rem;
+  border: 0.4rem dashed var(---header-text-color);
+}
+
+.jumbotron h1 {
+  font-size: 4.5rem;
+  text-shadow: 0 0 4px var(---p-text-color);
+  -webkit-text-stroke: 1.6px var(---secondary-bg-color);
+}
+
+.jumbotron p {
+  font-size: 1.5rem;
+}
+
+.header-nav-list .center-element {
+  background-color: var(---light-maroon);
+}
+
+.fixed-nav ul {
+  font-size: 1.25rem;
+}
+
+#content {
+  display: flex;
+  flex-direction: column;
+  gap: 3.75rem;
+}
+
+#intro-quote {
+  background-color: var(---light-maroon);
+  padding: 2.5rem 0;
+}
+
+#intro-quote blockquote p {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+#intro-quote a {
+  text-decoration: underline;
+}
+
+#background {
+  background-color: var(---secondary-bg-color);
+  padding: 2.5rem 0 4.5rem 0;
+}
+
+#background section {
+  padding: 1.5em 2.75em;
+  color: #fff;
+  background-color: var(---warm-mud);
+}
+
+#background hr {
+  border: none;
+  height: 2px;
+  background-color: var(---warm-mud);
+}
+
+footer {
+  background-color: var(---light-maroon);
+}
+
+.footer-quote {
+  text-align: center;
+  padding: 2rem;
+}
+
+.footer-copy {
+  background-color: var(---secondary-bg-color);
+}
+
+.footer-copy p {
+  font-size: 1rem;
+  margin: 0;
+  padding: 0.75rem;
+  text-align: center;
+}
+
+.tracklist-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+#track-list {
+  list-style: none;
+  align-self: center;
+  display: grid;
+  max-width: 40rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  padding: 0;
+}
+
+
+.tracklist-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.track-1, .track-3 {
+  grid-column: span 1;
+}
+
+.track-2 {
+  grid-column: span 2;
+}
+
+.track-detail {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.track-detail h3 {
+  position: relative;
+  max-width: fit-content;
+  text-align: center;
+  line-height: 100%;
+  letter-spacing: -0.001em;
+  margin: 0;
+  -webkit-text-stroke: unset;
+  text-shadow: unset;
+  color: var(---tl-white);
+}
+
+.text-black {
+  color: var(---tl-black) !important;
+}
+
+.track-detail img {
+  position: absolute;
+  top: 0;
+  z-index: -10;
+}
+
+.track-detail p {
+  font-size: 1rem;
+  max-width: 15rem;
+  margin-bottom: 0.5rem;
+}
+
+.tlms {
+  display: flex;
+  line-height: 136%;
+}
+
+.tlms .the {
+  rotate: -7.86deg;
+  font-size: 1.125rem;
+  margin: 8px 12px 0 0;
+}
+
+.tlms .lms {
+  rotate: 3deg;
+  font-size: 2.125rem;
+  margin: 12px 0 0 -28px;
+}
+
+
+
+
+
+
+
+
+.texture-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  mix-blend-mode: multiply;
+  background-repeat: repeat;
+  pointer-events: none;
+  background-image: url('../images/texture.jpg')
+}
+
+@keyframes opacityTransition {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
