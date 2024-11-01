@@ -14,10 +14,6 @@
   ---beige-paper: #FAF7F0;
 }
 
-* {
-  /* border: 1px solid red; */
-}
-
 body {
   font-family: "Space Grotesk", serif;
   font-optical-sizing: auto;
