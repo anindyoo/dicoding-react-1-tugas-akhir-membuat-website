@@ -96,7 +96,8 @@ header nav ul {
   list-style: none;
   gap: 2rem;
   font-size: 1.5rem;
-}  
+  padding: 0;
+}
 
 header nav ul > li:hover,
 .message-pic-wrapper a:hover,
@@ -284,12 +285,14 @@ footer {
 .tlms .the {
   rotate: -7.86deg;
   font-size: 1.125rem;
-  margin: 8px 12px 0 0;
+  line-height: 90%;
+  margin: 16px 12px 0 0;
 }
 
 .tlms .lms {
   rotate: 3deg;
   font-size: 2.125rem;
+  line-height: 95%;
   margin: 12px 0 0 -28px;
 }
 
@@ -317,7 +320,8 @@ footer {
   border: 1px solid var(---p-text-color);
 }
 
-.message-pic-wrapper img {
+.message-pic-wrapper img,
+.message-pic-wrapper figcaption {
   max-width: 18rem;  
 }
 
@@ -346,7 +350,7 @@ footer {
 }
 
 .album-detail img {
-  max-width: 30rem;
+  max-width: 20rem;
 }
 
 .album-detail-wrapper {
@@ -362,7 +366,6 @@ footer {
   padding: 1.5rem;
   border-spacing: 0.75rem;
   background-color: var(---secondary-bg-color-80);
-  
 }
 
 .album-detail th {
@@ -390,4 +393,129 @@ footer {
 @keyframes opacityTransition {
   from {opacity: 0;}
   to {opacity: 1;}
+}
+
+@media screen and (max-width: 768px) {
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+  }
+  
+  p {
+    font-size: 1rem;
+  }
+
+  .jumbotron {
+    padding: 1.5rem 2rem;
+    border: 0.4rem dashed var(---header-text-color);
+  }
+  
+  .jumbotron h1 {
+    font-size: 3rem;
+  }
+  
+  .jumbotron p {
+    font-size: 1.15rem;
+  }
+
+  header nav ul {
+    font-size: 1.25rem;
+    flex-wrap: wrap;
+  }
+
+  #intro-quote blockquote p {
+    font-size: 1.25rem;
+  }
+
+  .center-element {
+    width: 85%;
+    max-width: 75rem;
+    margin: 0 auto;
+  }
+  
+  #track-list {
+    max-width: 31.25rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  .track-1, .track-2, .track-3 {
+    grid-column: unset;
+  }
+
+  .message-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .album-detail-wrapper {
+    flex-direction: column;
+    padding: 2rem 0;
+    border: 1.5rem solid var(---p-text-color-dark);
+    gap: 1.75rem;
+  }
+
+  .album-detail h2,
+  .album-detail h3 {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .jumbotron {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.5rem 1.25rem;
+    border: 0.4rem dashed var(---header-text-color);
+    height: 30rem;
+  }
+  
+  .jumbotron h1 {
+    font-size: 2rem;
+  }
+  
+  .jumbotron p {
+    font-size: 1rem;
+  }
+
+  .fixed-nav ul {
+    font-size: 1rem;
+    gap: 1rem;
+  }
+
+  #background section {
+    padding: 1.5em;
+  }
+
+  #track-list {
+    max-width: 31.25rem;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 3rem;
+  }
+
+  .track-2 {
+    margin-top: 2rem;
+  }
+
+  .track-27 {
+    margin-top: -2rem;
+    margin-bottom: 3rem;
+  }
+
+  .message-pic-wrapper figure {
+    padding: 1.25rem;
+  }
+
+  .message-pic-wrapper img,
+  .message-pic-wrapper figcaption {
+    max-width: 15rem;  
+  }
+
+  .album-detail img {
+    max-width: 12rem;
+  }
 }

@@ -212,7 +212,7 @@ const tracklist = [
     features: 'Linda Martel',
     font: 'anton',
     rotate: '',
-    fontSize: '',
+    fontSize: '2.125rem',
     top: '',
     left: '',
     gap: '',
@@ -313,21 +313,20 @@ const generateTracklist = () => {
     const li =
     `<li
       class="tracklist-item track-${track.id}"
-      style="${track.id === 100 && 'grid-column: 1 / span 2'};"
     >
       <div
         class="track-detail"
         style="
-          ${track.gap ? `gap: ${track.gap}` : ''};
+          ${track.gap ? `gap: ${track.gap};` : ''}
         "
       >
         <h3
           class="font-${track.font}"
           style="
             font-size: ${track.fontSize};
-            ${track.rotate ? `rotate: ${track.rotate}` : ''};
-            ${track.top ? `top: ${track.top}` : ''};
-            ${track.left ? `left: ${track.left}` : ''};
+            ${track.rotate ? `rotate: ${track.rotate};` : ''}
+            ${track.top ? `top: ${track.top};` : ''}
+            ${track.left ? `left: ${track.left};` : ''}
           "
         >${track.title}</h3>
         <p>${track.features ? `with ${track.features}` : '' }</p>
